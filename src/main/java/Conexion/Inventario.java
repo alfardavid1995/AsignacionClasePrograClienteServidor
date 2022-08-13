@@ -4,6 +4,12 @@
  */
 package Conexion;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Christian
@@ -78,5 +84,26 @@ public class Inventario
         this.cantidad = cantidad;
     }
     
-    
+    public  void  crearUsuarios()
+    {
+        PreparedStatement ps=Conexion.getConnection().prepareStatement("INSERT INTO usuarios(nombreusuarios,primerApellido,SegundoApellido,Email,FechaNacimiento,ipv4)VALUES (?,?,?,?,?,?)");
+          
+            ps.setString(1, nombrePersona);
+            ps.setString(2, apellido1);
+            ps.setString(3, apellido2);
+            ps.setString(4, email);
+            ps.setDate(5, fechaNacimiento);
+            ps.setString(6, ip);
+            consutaRoles.setInt(1,ipsiguien);
+            consutaRoles.setInt(2, rol);
+            ps.execute();
+            consutaRoles.execute();
+            JOptionPane.showMessageDialog(null,"Se ha guardado el usuario");
+                
+            }
+            catch (SQLException exception)
+            {
+            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE,null, exception);
+        }
+    }
 }

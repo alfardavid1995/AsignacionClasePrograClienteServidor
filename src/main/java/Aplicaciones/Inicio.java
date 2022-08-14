@@ -4,11 +4,15 @@
  */
 package Aplicaciones;
 import Conexion.Inventario;
+import Hilo2.FechaHilo;
 /**
  *
  * @author Christian
  */
 public class Inicio extends javax.swing.JFrame {
+    
+    FechaHilo hilotiempoinactivo= new FechaHilo();
+    
     Inventario inventario= new  Inventario();
     Formulario_Inventario formulario_Inventario=new  Formulario_Inventario();
     Formulario_Modificar formulario_Modificar= new Formulario_Modificar();
@@ -21,6 +25,8 @@ public class Inicio extends javax.swing.JFrame {
         initComponents();
         inventario.mostrarInventario();
         tb_inventario.setModel(inventario.modelo);
+      
+        
         
     }
 
@@ -45,6 +51,11 @@ public class Inicio extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -140,7 +151,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(75, Short.MAX_VALUE))
+                        .addContainerGap(30, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -165,7 +176,7 @@ public class Inicio extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -195,11 +206,20 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         
-        inventario.limpiartabla();
-        inventario.mostrarInventario();
-        tb_inventario.setModel(inventario.modelo);      
+         hilotiempoinactivo.start();
+        
+        System.out.println(hilotiempoinactivo.tiempo);
+        if(hilotiempoinactivo.tiempo==1000)
+        {
+            dispose();
+            
+        }   
         
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+ 
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments

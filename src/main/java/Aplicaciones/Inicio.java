@@ -5,6 +5,7 @@
 package Aplicaciones;
 import Conexion.Inventario;
 import Hilo2.FechaHilo;
+import Hilo2.HiloTimeout;
 import Hilo2.MultiThreading;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,6 +23,7 @@ public class Inicio extends javax.swing.JFrame {
     FormularioInventarioActualizar formularioInventarioActualizar=new  FormularioInventarioActualizar();
     FormularioEliminarInventario formularioEliminarInventario= new  FormularioEliminarInventario();
     MultiThreading threadFechaHora = new MultiThreading(Inicio.this);
+    HiloTimeout hiloTimeoutThread = new HiloTimeout(Inicio.this);
     /**
      * Creates new form Inicio
      */
@@ -31,8 +33,13 @@ public class Inicio extends javax.swing.JFrame {
         tb_inventario.setModel(inventario.modelo);
         
         threadFechaHora.start();
+        hiloTimeoutThread.start();
       
       
+        
+    }
+    
+    public void CerrarTodaLaOstia(){
         
     }
     
@@ -228,18 +235,23 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        formulario_Modificar.setVisible(true);
+       hiloTimeoutThread.tiempoRestante=30;
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        formulario_Inventario.setVisible(true);
+       hiloTimeoutThread.tiempoRestante=60;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        formularioEliminarInventario.setVisible(true);
+       hiloTimeoutThread.tiempoRestante=60;
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        formularioInventarioActualizar.setVisible(true);
+       hiloTimeoutThread.tiempoRestante=60;
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -250,6 +262,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         refrescar();
+        hiloTimeoutThread.tiempoRestante=60;
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

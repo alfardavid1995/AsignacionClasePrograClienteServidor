@@ -192,9 +192,11 @@ public class Inventario
     public void eliminarInventario()
     {
           try {
-            PreparedStatement ps=Conexion.getConnection().prepareStatement("delete from inventario where codigoarticulo='?'");
+            PreparedStatement ps=Conexion.getConnection().prepareStatement("Delete from inventario where codigoarticulo=?");
         
             ps.setString(1, codigoArticulo);
+            
+            ps.executeUpdate();
        
         } catch (SQLException e) {
                     Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE,null, e);

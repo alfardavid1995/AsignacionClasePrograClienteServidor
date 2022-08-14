@@ -155,7 +155,7 @@ Inventario inventario =new Inventario();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      inventario.setCodigoArticulo(buscarArticulo.getText());
+        inventario.setCodigoArticulo(buscarArticulo.getText());
         nombreArticulo.setVisible(true);
         PrecioArticulo.setVisible(true);
         Descripcion.setVisible(true);

@@ -128,7 +128,7 @@ public class Inventario
             PreparedStatement consulta =Conexion.getConnection().prepareStatement("SELECT * FROM inventario as a WHERE a.codigoarticulo IN(?)");
           consulta.setString(1,codigoArticulo );
             ResultSet rs= consulta.executeQuery();
-           JOptionPane.showMessageDialog(null,"Hola");
+           JOptionPane.showMessageDialog(null,"Se ha buscado el usuario");
             
             
         while(rs!=null&&rs.next()){    
@@ -163,6 +163,8 @@ public class Inventario
             ps.setString(5, codigoArticulo);
             
             ps.executeUpdate();  
+            
+            JOptionPane.showMessageDialog(null, "Se ha actualizado el usuario");
         } catch (SQLException e) {
                     Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE,null, e);
 
@@ -182,7 +184,8 @@ public class Inventario
             ps.setInt(4, cantidad);
             ps.setString(5, codigoArticulo);
             
-            ps.executeUpdate();  
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "EL usuario esta modificado");
         } catch (SQLException e) {
                     Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE,null, e);
 
@@ -197,6 +200,8 @@ public class Inventario
             ps.setString(1, codigoArticulo);
             
             ps.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null,"El usuario se ha eliminado");
        
         } catch (SQLException e) {
                     Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE,null, e);

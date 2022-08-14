@@ -16,6 +16,7 @@ import java.util.logging.Logger;
  */
 public class Conexion 
 {
+    
     private static Conexion conexion;
     private static final String DBurl="jdbc:mysql://localhost:3306/inventario?serverTimezone=UTC";
     private static Connection connection=null;
@@ -25,7 +26,7 @@ public class Conexion
         try
         {
         Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-        connection= DriverManager.getConnection(DBurl,"root","cris12pro");
+        connection= DriverManager.getConnection(DBurl,"root","caca123X!");
         } catch (ClassNotFoundException |SQLException|NoSuchMethodException|
                 SecurityException|InstantiationException|IllegalAccessException
                 |IllegalArgumentException|InvocationTargetException exception)

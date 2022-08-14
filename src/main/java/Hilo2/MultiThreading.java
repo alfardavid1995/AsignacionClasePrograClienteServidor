@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import Aplicaciones.Inicio;
 
 /**
  *
@@ -16,6 +17,14 @@ public class MultiThreading extends Thread{
 
     public Calendar fechaHoy;
     public String formattedDate;
+    public Inicio inicioPrincipal;
+
+    public MultiThreading(Inicio inicio) {
+        inicioPrincipal = inicio;
+        
+    }
+    
+    
     
     @Override
     public void run(){
@@ -25,6 +34,8 @@ public class MultiThreading extends Thread{
             Calendar calendar = Calendar.getInstance();
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             formattedDate = simpleDateFormat.format(calendar.getTime());
+            inicioPrincipal.MeterHoraLabel(formattedDate);
+           
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {

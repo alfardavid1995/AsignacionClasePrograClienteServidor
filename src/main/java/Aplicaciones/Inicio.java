@@ -21,7 +21,7 @@ public class Inicio extends javax.swing.JFrame {
     Formulario_Modificar formulario_Modificar= new Formulario_Modificar();
     FormularioInventarioActualizar formularioInventarioActualizar=new  FormularioInventarioActualizar();
     FormularioEliminarInventario formularioEliminarInventario= new  FormularioEliminarInventario();
- 
+    MultiThreading threadFechaHora = new MultiThreading(Inicio.this);
     /**
      * Creates new form Inicio
      */
@@ -29,11 +29,15 @@ public class Inicio extends javax.swing.JFrame {
         initComponents();
         inventario.mostrarInventario();
         tb_inventario.setModel(inventario.modelo);
-        MultiThreading threadFechaHora = new MultiThreading();
+        
         threadFechaHora.start();
       
+      
         
-        
+    }
+    
+    public void MeterHoraLabel(String s){
+        fechaHora.setText(s);
     }
     
     private void refrescar(){
@@ -239,7 +243,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-
+        if(this.isActive()){
+        fechaHora.setText(threadFechaHora.formattedDate);
+        }
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

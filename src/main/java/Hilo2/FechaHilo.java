@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Christian
+ * @author Christian Castro y David Alfaro
  */
 public class FechaHilo extends Thread{
     public  int tiempo=0;

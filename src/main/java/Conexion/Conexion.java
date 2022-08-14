@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
  *
- * @author Christian
+ * @author Christian Castro y David Alfaro
  */
 public class Conexion 
 {

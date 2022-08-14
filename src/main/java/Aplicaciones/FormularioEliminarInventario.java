@@ -11,8 +11,9 @@ import Conexion.Inventario;
 public class FormularioEliminarInventario extends javax.swing.JFrame {
 Inventario inventario =new Inventario();
     /**
-     * Creates new form FormularioEliminarInventario
-     */
+ *
+ * @author Christian Castro y David Alfaro
+ */
     public FormularioEliminarInventario() {
         initComponents();
     }

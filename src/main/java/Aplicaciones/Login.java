@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author css124646
+ * @author Christian Castro y David Alfaro
  */
 public class Login extends javax.swing.JFrame {
 

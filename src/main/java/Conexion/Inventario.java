@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Christian
+ * @author Christian Castro y David Alfaro
  */
 public class Inventario 
 {

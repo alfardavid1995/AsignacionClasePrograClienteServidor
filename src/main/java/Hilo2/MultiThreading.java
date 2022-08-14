@@ -11,7 +11,7 @@ import Aplicaciones.Inicio;
 
 /**
  *
- * @author css124646
+ * @author Christian Castro y David Alfaro
  */
 public class MultiThreading extends Thread{
 

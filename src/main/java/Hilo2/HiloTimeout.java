@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Christian
+ * @author Christian Castro y David Alfaro
  */
 public class HiloTimeout extends Thread{
     public Inicio inicioPincipal;

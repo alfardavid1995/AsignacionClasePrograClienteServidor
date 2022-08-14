@@ -6,7 +6,7 @@ package Aplicaciones;
 import Conexion.Inventario;
 /**
  *
- * @author Christian
+ * @author Christian Castro y David Alfaro
  */
 public class Formulario_Inventario extends javax.swing.JFrame {
 

@@ -7,7 +7,7 @@ import Gestion.GestionAdministrador;
 
 /**
  *
- * @author Christian
+ * @author Christian Castro y David Alfaro
  */
 public class Administrador 
 {

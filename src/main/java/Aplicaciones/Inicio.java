@@ -18,6 +18,7 @@ public class Inicio extends javax.swing.JFrame {
     Formulario_Modificar formulario_Modificar= new Formulario_Modificar();
     FormularioInventarioActualizar formularioInventarioActualizar=new  FormularioInventarioActualizar();
     FormularioEliminarInventario formularioEliminarInventario= new  FormularioEliminarInventario();
+ 
     /**
      * Creates new form Inicio
      */
@@ -222,8 +223,12 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         
-        
-        
+    inventario.limpiartabla();
+ 
+    inventario.mostrarInventario();
+    tb_inventario.setModel(inventario.modelo);
+   
+  
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated

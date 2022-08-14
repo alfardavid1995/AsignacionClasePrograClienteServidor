@@ -112,10 +112,11 @@ public class Inventario
     
     public void limpiartabla()
     {
-        for(int i=0; i<100;i++)
-        {
-            modelo.removeRow(i);
-        }
+      
+            listaArticulo.clear();
+            modelo.setRowCount(0);
+            modelo.setColumnCount(0);
+   
         
     }
     

@@ -175,7 +175,14 @@ public class Formulario_Modificar extends javax.swing.JFrame {
         inventario.setCantidad(Integer.parseInt(cantidad.getText()));
         inventario.setDescripcionArticulo(Descripcion.getText());
         inventario.setPrecioArticulo(Double.parseDouble(PrecioArticulo.getText()));
+        
+        nombreArticulo.setText("");
+        codArticulo.setText("");
+        cantidad.setText("");
+        Descripcion.setText("");
+        PrecioArticulo.setText("");
         inventario.modificarInventario();
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

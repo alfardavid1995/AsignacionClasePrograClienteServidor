@@ -127,6 +127,13 @@ public class Formulario_Inventario extends javax.swing.JFrame {
         inventario.setPrecioArticulo(Double.parseDouble(PrecioArticulo.getText()));
         
         inventario.CrearInventario();
+        nombreArticulo.setText("");
+        codArticulo.setText("");
+        cantidad.setText("");
+        Descripcion.setText("");
+        PrecioArticulo.setText("");
+       
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void codArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codArticuloActionPerformed

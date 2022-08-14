@@ -186,6 +186,13 @@ Inventario inventario =new Inventario();
         inventario.setDescripcionArticulo(Descripcion.getText());
         inventario.setPrecioArticulo(Double.parseDouble(PrecioArticulo.getText()));
         inventario.eliminarInventario();
+        
+        nombreArticulo.setText("");
+        codArticulo.setText("");
+        cantidad.setText("");
+        Descripcion.setText("");
+        PrecioArticulo.setText("");
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
